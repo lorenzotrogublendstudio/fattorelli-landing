@@ -8,10 +8,10 @@ const ContactForm = () => {
   // Qui metti la funzione handleSubmit
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch('http://localhost:5000/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, message }),
+    const res = await fetch('../../contact.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, email, message, phone: '', company: '' }) // {name,email,phone,message, company: "" (honeypot vuoto)}
     });
     const data = await res.json();
     alert(data.message);
