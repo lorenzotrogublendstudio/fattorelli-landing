@@ -1,28 +1,92 @@
-.reviews {
-  padding: 4rem 2rem;
-  background: #f1f6fb;
+/* ===== Palette di progetto (usa le tue vars se già presenti) ===== */
+:root{
+  --mint:#c0e2e5;
+  --teal:#279394;
+  --teal-dark:#1f7778;
+  --ink:#103538;
+  --muted:#3a5c5f;
+  --white:#fff;
+  --radius:20px;
+  --shadow:0 20px 44px rgba(16,53,56,.16);
+}
+
+/* ===== Titolo ===== */
+.reviews-title{
+  margin: 0 0 16px;
+  color: var(--teal-dark);
+  font-weight: 900;
+  font-size: clamp(28px,3.2vw,44px);
   text-align: center;
 }
 
-.reviews h3 {
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
-  color: #004080;
+/* ===== Griglia ===== */
+.reviews-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 18px;
+}
+@media (max-width: 980px){ .reviews-grid{ grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 640px){ .reviews-grid{ grid-template-columns: 1fr; } }
+
+/* ===== Card ===== */
+.review-card{
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 18px 18px 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(16,53,56,.08);
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .22s ease;
+  animation: rv-pop .6s cubic-bezier(.2,.7,.2,1) both;
+}
+.review-card::before{
+  content:"“";
+  position:absolute;
+  right:-6px; top:-26px;
+  font-size: 140px;
+  line-height: .8;
+  color: rgba(39,147,148,.07);
+  font-weight: 900;
+  pointer-events:none;
+}
+.review-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 28px 56px rgba(16,53,56,.20);
 }
 
-.reviews blockquote {
-  margin: 1.5rem auto;
-  max-width: 600px;
-  font-style: italic;
-  background: white;
-  padding: 1.5rem;
-  border-left: 5px solid #0066cc;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+/* ===== Head ===== */
+.review-head{
+  display:flex; align-items:center; gap:12px; margin-bottom:10px;
+}
+.rv-avatar{
+  width:42px; height:42px; border-radius:50%;
+  display:grid; place-items:center;
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+  color:#fff; font-weight:900;
+  box-shadow: 0 10px 20px rgba(39,147,148,.35);
+}
+.rv-id{ flex:1; min-width:0 }
+.rv-name{ color: var(--ink); }
+.rv-time{ color: var(--muted); font-size: 13px; display:block; }
+
+/* ===== Stelle ===== */
+.rv-stars{ display:inline-flex; gap:3px }
+.rv-star{ width:18px; height:18px; fill:#cfe2e2 }
+.rv-star.on{ fill:#FFD166 }
+
+/* ===== Testo ===== */
+.review-text{
+  margin: 6px 0 0;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-.reviews footer {
-  margin-top: 0.8rem;
-  font-weight: bold;
-  color: #333;
+/* ===== CTA ===== */
+.reviews-cta{
+  display:flex; justify-content:center; margin-top:22px;
 }
+
+/* ===== Animazioni ===== */
+@keyframes rv-pop{ from{ opacity:0; transform:translateY(18px) } to{ opacity:1; transform:none } }

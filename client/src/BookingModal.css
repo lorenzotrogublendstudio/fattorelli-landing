@@ -1,0 +1,109 @@
+/* Overlay */
+.bm-overlay{
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(2px);
+  display: grid; place-items: center;
+  z-index: 9999;
+  animation: bm-fade .2s ease both;
+}
+@keyframes bm-fade{ from{opacity:0} to{opacity:1} }
+
+/* Modale */
+.bm-modal{
+  width: min(880px, 92vw);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 40px 80px rgba(0,0,0,.35);
+  position: relative;
+  overflow: hidden;
+  transform: translateY(10px) scale(.98);
+  animation: bm-in .28s cubic-bezier(.2,.7,.2,1) forwards;
+}
+@keyframes bm-in{ to{ transform: none } }
+
+/* Close */
+.bm-close{
+  position:absolute; top:8px; right:12px;
+  width:36px; height:36px; border-radius:999px;
+  border:none; background: rgba(0,0,0,.06); color:#173036; font-size:20px;
+  cursor:pointer; transition: filter .15s ease, transform .1s ease;
+}
+.bm-close:hover{ filter: brightness(1.1); transform: translateY(-1px) }
+
+/* DESKTOP */
+.bm-desktop{ padding: 28px; }
+.bm-title{
+  margin: 0 0 8px; font-weight: 900;
+  font-size: clamp(26px, 3.2vw, 36px);
+  color: var(--teal-dark);
+}
+.bm-sub{ margin: 0 0 14px; color: var(--muted) }
+
+.bm-form{ display: grid; gap: 12px }
+.bm-row2{ display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+@media (max-width: 640px){ .bm-row2{ grid-template-columns: 1fr } }
+
+.bm-form input, .bm-form textarea{
+  width:100%; padding: 12px 14px;
+  border-radius: 12px; border:1px solid rgba(16,53,56,.15);
+  background:#f8ffff; color: var(--ink);
+  transition: border-color .15s ease, box-shadow .15s ease, transform .06s ease;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.6);
+}
+.bm-form input:focus, .bm-form textarea:focus{
+  outline:none; border-color: var(--teal);
+  box-shadow: 0 0 0 6px rgba(39,147,148,.18), inset 0 1px 0 rgba(255,255,255,.6);
+  transform: translateY(-1px);
+}
+.bm-form button{
+  align-self: start;
+  padding: 14px 18px; border-radius: 12px;
+  border:none; font-weight: 900; letter-spacing: .4px;
+  color:#fff; background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+  box-shadow: 0 14px 28px rgba(31,119,120,.35);
+  cursor:pointer; position:relative; overflow:hidden;
+  transition: transform .15s ease, box-shadow .2s ease, filter .2s;
+}
+.bm-form button:hover{ transform: translateY(-2px); filter: brightness(1.06) }
+.bm-form button.is-loading{ pointer-events:none; filter: saturate(.6) brightness(.9) }
+.bm-msg{ margin: 2px 0 0; font-size: 14px }
+.bm-msg.ok{ color: #1b7d4f } .bm-msg.err{ color: #b30000 }
+
+/* MOBILE: CHIAMA ORA */
+.bm-mobile{
+  width: min(520px, 95vw); padding: 28px 20px;
+  text-align: center; background: #fff;
+}
+.bm-call .bm-badge{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width: 78px; height: 34px; padding: 0 10px;
+  border-radius:999px; background:#fff; color:#b30000; font-weight:900;
+  box-shadow: 0 8px 16px rgba(0,0,0,.18); border: 2px solid #ff8080;
+}
+.bm-call .bm-title{
+  margin: 10px 0 6px;
+  color:#b30000; text-transform: uppercase;
+}
+.bm-callbtn{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:100%; height:56px; border-radius:14px;
+  background: linear-gradient(135deg, #ff3333, #b30000);
+  color:#fff; font-weight:900; letter-spacing: .6px; text-decoration:none;
+  box-shadow: 0 20px 40px rgba(179,0,0,.35);
+  transition: transform .15s ease, filter .2s ease; margin: 8px 0 4px;
+  position:relative; overflow:hidden;
+}
+.bm-callbtn::after{
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(120deg, transparent 35%, rgba(255,255,255,.22) 50%, transparent 65%);
+  transform: translateX(-120%); animation: bm-sheen 2.8s ease-in-out infinite;
+}
+.bm-callbtn:hover{ transform: translateY(-2px); filter: brightness(1.06) }
+.bm-note{ color: #6b7f82; margin: 6px 0 0 }
+
+@keyframes bm-sheen{
+  0%{ transform: translateX(-120%) }
+  55%{ transform: translateX(120%) }
+  100%{ transform: translateX(120%) }
+}

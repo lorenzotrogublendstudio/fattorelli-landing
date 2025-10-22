@@ -1,59 +1,177 @@
-.contact-form {
-  max-width: 600px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
+/* ======================================================
+   CONTACT FORM — BAD & BEAUTIFUL
+   (nessuna modifica al markup necessaria)
+   ====================================================== */
+
+/* Contenitore del form */
+main form,
+.contact-card form,
+.contact-form,
+form {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 28px;
+  background:
+    linear-gradient(180deg, #ffffff 0%, #fbffff 100%);
+  border-radius: 22px;
+  border: 1px solid rgba(16,53,56,.08);
+  box-shadow:
+    0 24px 50px rgba(16,53,56,.18),
+    inset 0 0 0 1px rgba(255,255,255,.6);
+  position: relative;
+  overflow: hidden;
 }
 
-.contact-form:hover {
-  transform: translateY(-5px);
+/* bordo “neon” molto sottile */
+main form::before {
+  content:"";
+  position:absolute; inset:0;
+  border-radius: 22px;
+  padding: 2px;
+  background: linear-gradient(135deg, #66d1d2, #1f7778);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events:none;
+  opacity:.55;
 }
 
-.contact-form h3 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: #004080;
+/* Griglia a 2 colonne opzionale (se hai Nome/Email affiancati) */
+form .row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 720px){
+  form .row-2 { grid-template-columns: 1fr; }
 }
 
-.contact-form label {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  display: block;
-  color: #333;
+/* Label opzionali */
+form label{
+  display:block;
+  font-weight:700;
+  color: var(--teal-dark);
+  margin: 4px 2px 6px;
+  font-size: 14px;
 }
 
-.contact-form input,
-.contact-form textarea {
+/* Campi */
+form input,
+form textarea,
+.contact-card input,
+.contact-card textarea {
   width: 100%;
-  padding: 1rem;
-  margin-bottom: 1.2rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border 0.3s ease;
+  height: 56px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(16,53,56,.15);
+  background: #f8ffff;
+  font: 400 16px/1.3 'Roboto', sans-serif;
+  color: var(--ink);
+  transition: box-shadow .18s ease, border-color .18s ease, transform .06s ease;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.65);
+}
+form textarea{
+  min-height: 140px;
+  resize: vertical;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #004080;
+/* Placeholder */
+form ::placeholder{ color: rgba(16,53,56,.45); }
+
+/* Hover + Focus ring “teal” */
+form input:hover,
+form textarea:hover{
+  border-color: rgba(39,147,148,.55);
+}
+form input:focus,
+form textarea:focus{
   outline: none;
+  border-color: var(--teal);
+  box-shadow:
+    0 0 0 6px rgba(39,147,148,.18),
+    inset 0 1px 0 rgba(255,255,255,.6);
+  transform: translateY(-1px);
 }
 
-.contact-form button {
-  background: linear-gradient(135deg, #004080, #0066cc);
-  color: white;
+/* Errori / validazioni (se usi classi) */
+form input.is-invalid,
+form textarea.is-invalid{
+  border-color:#ff4d4d !important;
+  box-shadow: 0 0 0 6px rgba(255,77,77,.18) !important;
+}
+form .error-text{
+  margin-top: 6px;
+  color:#b30000;
+  font-weight:700;
+  font-size: 13px;
+}
+
+/* Pulsante di invio: grosso, con sheen + lift */
+form button[type="submit"],
+form .btn-submit,
+form button {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(180px, 40%, 260px);
+  height: 54px;
+  margin-top: 6px;
   border: none;
-  padding: 1rem 1.5rem;
-  font-size: 1.1rem;
-  border-radius: 8px;
+  border-radius: 14px;
+  font: 900 16px/1 'Roboto', sans-serif;
+  letter-spacing: .6px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+  box-shadow: 0 14px 28px rgba(31,119,120,.35);
   cursor: pointer;
-  transition: background 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
+}
+form button[type="submit"]::after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(120deg, transparent 35%, rgba(255,255,255,.22) 50%, transparent 65%);
+  transform: translateX(-120%);
+  animation: sheen 2.8s ease-in-out infinite;
+  pointer-events:none;
+}
+form button[type="submit"]:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow: 0 22px 36px rgba(31,119,120,.45);
+}
+form button[type="submit"]:active{
+  transform: translateY(0);
 }
 
-.contact-form button:hover {
-  background: linear-gradient(135deg, #0066cc, #0099ff);
+/* Piccolo badge sopra il form (opzionale) */
+form .kicker{
+  position:absolute;
+  top: -10px; left: 18px;
+  background: #fff;
+  color: var(--teal-dark);
+  font-weight: 900;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(16,53,56,.08);
+  box-shadow: 0 8px 18px rgba(0,0,0,.08);
+}
+
+/* Stato “loading” per il submit (se lo imposti via classe) */
+form .loading,
+form button.loading{
+  pointer-events: none;
+  filter: saturate(.6) brightness(.9);
+}
+
+/* Micro-animazione globale usata dal bottone */
+@keyframes sheen {
+  0%   { transform: translateX(-120%); }
+  55%  { transform: translateX(120%); }
+  100% { transform: translateX(120%); }
 }

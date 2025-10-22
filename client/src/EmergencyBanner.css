@@ -1,10 +1,11 @@
-.emergency-banner {
-  background: #e60000;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  padding: 1rem;
-  font-size: 1.3rem;
-  letter-spacing: 1px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+.banner{
+  background:var(--teal-dark);
+  color:#fff;
+  text-align:center;
+  padding:16px 12px;
+  border-radius:16px;
+  box-shadow:0 12px 28px rgba(30,111,112,.35);
+  font-weight:900;
+  animation:fadeUp .6s ease both;
 }
+.banner .small{display:block;margin-top:6px;opacity:.95}

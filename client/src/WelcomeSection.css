@@ -1,33 +1,122 @@
+/* ==========================
+   WELCOME SECTION — layout orizzontale
+   ========================== */
 .welcome {
-  padding: 4rem 2rem;
-  text-align: center;
-  background: #f9f9f9;
-}
-
-.welcome h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #004080;
-}
-
-.welcome ul {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0 2rem 0;
+  background: var(--mint);
+  color: var(--ink);
+  padding: 80px 40px;
   display: flex;
   justify-content: center;
-  gap: 2rem;
 }
 
-.welcome li {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #0066cc;
+.welcome-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  gap: 60px;
+  flex-wrap: wrap;
 }
 
-.welcome p {
-  max-width: 700px;
-  margin: 0 auto;
+/* Testo a sinistra */
+.welcome-text {
+  flex: 1 1 55%;
+  text-align: center;
+  animation: fadeUp 0.8s ease both;
+}
+
+/* Foto a destra */
+.welcome-photo {
+  flex: 1 1 35%;
+  display: flex;
+  justify-content: center;
+  animation: fadeUp 1s ease 0.2s both;
+}
+
+/* Titolo */
+.hero-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: clamp(48px, 6vw, 90px);
+  color: var(--teal-dark);
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+/* Chips */
+.chips {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  background: #fff;
+  color: var(--teal-dark);
+  font-weight: 700;
+  padding: 14px 22px;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.chip:hover {
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+  color: #fff;
+  transform: translateY(-5px) scale(1.05);
+}
+
+/* Paragrafo */
+.welcome-text p {
+  max-width: 620px;
+  color: var(--muted);
   line-height: 1.6;
-  color: #333;
+  font-size: clamp(18px, 1.6vw, 22px);
+}
+
+/* Foto */
+.foto-fattorelli {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transition: transform 0.6s ease;
+}
+
+.foto-fattorelli:hover {
+  transform: scale(1.05);
+}
+
+/* Animazioni */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+  .welcome-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .welcome-text {
+    text-align: center;
+  }
+
+  .welcome-text p {
+    margin: 0 auto;
+  }
 }
