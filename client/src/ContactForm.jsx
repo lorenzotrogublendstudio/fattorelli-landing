@@ -19,6 +19,13 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
+         <input
+        name="company"
+        autoComplete="off"
+        tabIndex="-1"
+        style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0 }}
+        onChange={() => {}}
+      />
       <div>
         <label>Nome</label>
         <input 
