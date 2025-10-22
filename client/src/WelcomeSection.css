@@ -1,0 +1,33 @@
+.welcome {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.welcome h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #004080;
+}
+
+.welcome ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.welcome li {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #0066cc;
+}
+
+.welcome p {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #333;
+}

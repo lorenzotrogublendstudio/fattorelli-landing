@@ -1,0 +1,17 @@
+footer {
+  background: #00264d;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+footer p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+footer p:first-child {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
