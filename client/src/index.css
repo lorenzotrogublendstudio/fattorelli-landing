@@ -4,16 +4,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
-  --mint: #c0e2e5;
-  --teal: #279394;
-  --teal-dark: #1f7778;
+  --teal: #54b4c7;
+  --teal-700: #2e7f8e;
+  --mint: #cfeef4;
   --ink: #103538;
-  --muted: #3a5c5f;
-  --danger: #e33b3b;
+  --muted: #5b7b81;
   --white: #ffffff;
-  --radius: 22px;
-  --shadow: 0 18px 46px rgba(16, 53, 56, 0.18);
 }
+
 
 * {
   box-sizing: border-box;

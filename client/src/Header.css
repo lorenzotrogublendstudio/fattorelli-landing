@@ -1,17 +1,113 @@
-header {
-  background: linear-gradient(180deg, var(--teal), var(--teal-dark));
-  color: #fff;
-  padding: 28px 0;
-  text-align: center;
-  box-shadow: 0 10px 28px rgba(30,111,112,.35);
+/* ====== HEADER (sfondo bianco, responsive, grande) ====== */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  color: var(--ink);
+  border-bottom: 2px solid rgba(84,180,199,.18);
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+  /* padding verticale fluido */
+  padding-block: clamp(8px, 1.2vw, 14px);
 }
 
-/* forza il bianco anche se esiste una regola globale sui titoli */
-header h1{
-  color: #fff !important;
-  font-size: clamp(34px, 6vw, 72px);
+/* wrapper principale */
+.header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(12px, 2vw, 28px);
+  /* consenti il wrap quando lo spazio orizzontale è poco */
+  flex-wrap: wrap;
+}
+
+/* ====== LOGO ====== */
+.brand{
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.brand-logo{
+  /* altezza fluida: 56–92px in base alla larghezza viewport */
+  height: clamp(56px, 8vw, 92px);
+  width: auto;
+  display: block;
+  transition: transform .25s ease;
+}
+.brand-logo:hover{ transform: scale(1.03); }
+
+/* ====== INDIRIZZO ====== */
+.header-address{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+  text-align: right;
+  font-style: normal; /* <address> non in italico */
+  line-height: 1.15;
+  /* larghezza max per evitare che “spinga” il layout su schermi medi */
+  max-width: min(48ch, 60vw);
+}
+.header-address span:first-child{
+  /* titolo indirizzo più grande e marcato */
+  font-size: clamp(18px, 2.1vw, 24px);
   font-weight: 900;
-  letter-spacing: .3px;
-  margin: 0;
-  text-shadow: none;        /* via quell’alone scuro */
+  color: var(--teal);
+  letter-spacing: .2px;
+}
+.header-address span:last-child{
+  font-size: clamp(15px, 1.7vw, 20px);
+  font-weight: 700;
+  color: #3a4a4a;
+  opacity: .95;
+}
+
+/* ====== HOVER LEGGERO SULL'INDIRIZZO ====== */
+.header-address:hover span:first-child,
+.header-address:hover span:last-child{
+  color: #2e7f8e;
+}
+
+/* ====== BREAKPOINTS ====== */
+
+/* Tablet: quando lo spazio scarseggia, mandiamo l’indirizzo a capo */
+@media (max-width: 1024px){
+  .header-inner{
+    /* logo a sinistra, indirizzo può andare a capo su riga sotto */
+    justify-content: space-between;
+  }
+}
+
+/* Mobile grande: centriamo tutto, aumentiamo leggibilità */
+@media (max-width: 860px){
+  .header-inner{
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .header-address{
+    align-items: center;
+    text-align: center;
+    max-width: 32ch; /* evita righe troppo lunghe */
+  }
+}
+
+/* Mobile piccolo: limiamo dimensioni per non far saltare il layout */
+@media (max-width: 520px){
+  .brand-logo{
+    height: clamp(48px, 12vw, 64px);
+  }
+  .header-address span:first-child{
+    font-size: clamp(17px, 5.2vw, 20px);
+  }
+  .header-address span:last-child{
+    font-size: clamp(14px, 4.6vw, 18px);
+  }
+}
+
+/* Accessibilità: riduci motion per chi lo richiede */
+@media (prefers-reduced-motion: reduce){
+  .brand-logo{ transition: none; }
+  .header-address:hover span:first-child,
+  .header-address:hover span:last-child{ color: inherit; }
 }

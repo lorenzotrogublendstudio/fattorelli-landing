@@ -8,6 +8,7 @@ import Map from './Map';
 import Reviews from './Reviews';              // 👈
 import Footer from './Footer';
 import BookingModal from './BookingModal';    // 👈
+import SkillsSection from "./SkillsSection";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -31,6 +32,7 @@ function App() {
       <Header />
       <WelcomeSection />
       <EmergencyBanner />
+      <SkillsSection />
       <ContactForm />
       <Map />
       {/* Passo l'opener al componente Reviews */}
