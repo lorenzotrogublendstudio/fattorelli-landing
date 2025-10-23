@@ -47,7 +47,7 @@ export default function BookingModal({ open, onClose }) {
     try {
       setSending(true);
       setMsg(null);
-      const res = await fetch("http://localhost:3000/api/contact", {
+      const res = await fetch("http://localhost:3000/contact.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

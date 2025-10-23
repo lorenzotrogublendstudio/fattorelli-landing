@@ -5,4 +5,16 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/fattorelli-landing/',
+  // ...existing code...
+  server: {
+    proxy: {
+      '/api/contact': {
+        target: 'http://127.0.0.1:3000',
+        changeOrigin: true,
+        rewrite: p => p.replace(/^\/api\/contact$/, '/contact.php'),
+      },
+    },
+  },
 })
+
+
