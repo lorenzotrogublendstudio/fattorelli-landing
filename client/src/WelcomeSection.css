@@ -1,1093 +1,34 @@
 /* ==========================
-   WELCOME SECTION — layout orizzontale
+   SEZIONE WELCOME
    ========================== */
 .welcome {
-  background: var(--mint);
-  color: var(--ink);
-  padding: 80px 40px;
-  display: flex;
-  justify-content: center;
+  padding: 80px 20px;
+  background-color: #c0e2e5;
+  overflow: hidden;
 }
 
 .welcome-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   max-width: 1200px;
-  gap: 60px;
-  flex-wrap: wrap;
-}
-
-/* Testo a sinistra */
-.welcome-text {
-  flex: 1 1 55%;
-  text-align: center;
-  animation: fadeUp 0.8s ease both;
-}
-
-/* Foto a destra */
-.welcome-photo {
-  flex: 1 1 35%;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
-  animation: fadeUp 1s ease 0.2s both;
-}
-
-/* Titolo */
-.hero-title {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 900;
-  font-size: clamp(48px, 6vw, 90px);
-  color: var(--teal-dark);
-  margin-bottom: 24px;
-  letter-spacing: -1px;
-}
-
-/* Chips */
-.chips {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 24px;
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.chip {
-  background: #fff;
-  color: var(--teal-dark);
-  font-weight: 700;
-  padding: 14px 22px;
-  border-radius: 999px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.chip:hover {
-  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
-  color: #fff;
-  transform: translateY(-5px) scale(1.05);
-}
-
-/* Paragrafo */
-.welcome-text p {
-  max-width: 620px;
-  color: var(--muted);
-  line-height: 1.6;
-  font-size: clamp(18px, 1.6vw, 22px);
-}
-
-/* Foto */
-.foto-fattorelli {
-  width: 100%;
-  max-width: 380px;
-  height: auto;
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-  transition: transform 0.6s ease;
-}
-
-.foto-fattorelli:hover {
-  transform: scale(1.05);
-}
-
-/* Animazioni */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive */
-@media (max-width: 880px) {
-  .welcome-content {
-    flex-direction: column-reverse;
-    text-align: center;
-    gap: 40px;
-  }
-
-  .welcome-text {
-    text-align: center;
-  }
-
-  .welcome-text p {
-    margin: 0 auto;
-  }
-}
-
-/* Nuovo slogan di impatto */
-.slogan-container {
-  margin: 32px 0;
-}
-
-.slogan-text {
-  font-size: clamp(28px, 3.5vw, 42px);
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--teal-dark);
-}
-
-.slogan-highlight {
-  font-size: clamp(36px, 4.5vw, 56px);
-  font-weight: 900;
-  background: linear-gradient(135deg, var(--teal-dark), #1a5d69);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  margin: 0;
-  line-height: 1.2;
-}
-
-.pep-banner {
-  margin-top: 40px;
-  font-size: clamp(18px, 2vw, 24px);
-  font-weight: 500;
-  color: var(--ink);
-  padding: 16px 24px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 16px;
-  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 40px;
 }
 
-.pep-letter {
-  color: var(--teal);
-  font-weight: 900;
-  font-size: 1.3em;
-}
-
-.pep-dot {
-  margin: 0 6px;
-  color: var(--teal);
-}
-
-@media (max-width: 880px) {
-  .slogan-container {
-    margin: 24px 0;
-  }
-  
-  .pep-banner {
-    padding: 12px 18px;
-    margin-top: 32px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .slogan-text {
-    font-size: clamp(24px, 6vw, 32px);
-  }
-  
-  .slogan-highlight {
-    font-size: clamp(30px, 7vw, 42px);
-  }
-  
-  .pep-banner {
-    font-size: 16px;
-    padding: 10px 14px;
-  }
-}
-
-/* Modifica il layout per centrare tutto */
 .welcome-content.centered {
   justify-content: center;
   text-align: center;
   flex-direction: column;
   max-width: 900px;
-  margin: 0 auto;
 }
 
+/* Testo a sinistra */
 .welcome-text {
-  flex: initial;
-  width: 100%;
+  flex: 1;
+  animation: fadeUp 0.8s ease-out;
 }
 
-/* Card PEP */
-.pep-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-  margin-top: 48px;
-}
-
-.pep-card {
-  background: white;
-  padding: 24px 20px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  flex: 1 1 260px;
-  max-width: 320px;
-  min-width: 240px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: all 0.3s ease;
-}
-
-.pep-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(84, 180, 199, 0.25);
-}
-
-.pep-card .pep-letter {
-  font-size: 48px;
-  margin-bottom: 8px;
-  color: var(--teal);
-  font-weight: 900;
-}
-
-.pep-card .pep-word {
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--ink);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .pep-cards {
-    gap: 16px;
-  }
-  
-  .pep-card {
-    padding: 20px 16px;
-  }
-  
-  .pep-card .pep-letter {
-    font-size: 42px;
-  }
-  
-  .pep-card .pep-word {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .pep-cards {
-    gap: 12px;
-  }
-  
-  .pep-card {
-    padding: 16px 12px;
-    flex: 1 1 100%;
-  }
-}
-
-/* ...existing code... */
-
-/* Card PEP - Separate */
-.pep-cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  margin-top: 60px;
-  padding: 0 40px;
-  flex-wrap: wrap;
-}
-
-.pep-card {
-  background: white;
-  padding: 40px 32px;
-  border-radius: 20px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  transition: all 0.3s ease;
-}
-
-.pep-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 50px rgba(84, 180, 199, 0.3);
-}
-
-.pep-card .pep-letter {
-  font-size: 56px;
-  color: var(--teal);
-  font-weight: 900;
-}
-
-.pep-card .pep-word {
-  font-size: 26px;
-  font-weight: 700;
-  color: var(--ink);
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .pep-cards-container {
-    gap: 24px;
-    margin-top: 48px;
-  }
-
-  .pep-card {
-    width: 280px;
-    padding: 32px 24px;
-  }
-
-  .pep-card .pep-letter {
-    font-size: 48px;
-  }
-
-  .pep-card .pep-word {
-    font-size: 24px;
-  }
-}
-
-@media (max-width: 768px) {
-  .pep-cards-container {
-    gap: 16px;
-    padding: 0 20px;
-  }
-
-  .pep-card {
-    width: 100%;
-    max-width: 280px;
-    padding: 28px 20px;
-  }
-
-  .pep-card .pep-letter {
-    font-size: 44px;
-  }
-
-  .pep-card .pep-word {
-    font-size: 22px;
-  }
-}
-
-@media (max-width: 480px) {
-  .pep-cards-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .pep-card {
-    width: 100%;
-    max-width: 240px;
-  }
-}
-
-/* Card PEP - Separate */
-.pep-cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  margin-top: 60px;
-  padding: 0 40px;
-  flex-wrap: wrap;
-}
-
-.pep-card {
-  background: white;
-  padding: 50px 40px;
-  border-radius: 20px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-  width: 340px;
-  min-height: 280px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  transition: all 0.3s ease;
-}
-
-.pep-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 50px rgba(84, 180, 199, 0.3);
-}
-
-.pep-card .pep-letter {
-  font-size: 64px;
-  color: var(--teal);
-  font-weight: 900;
-  line-height: 1;
-}
-
-.pep-card .pep-word {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--teal);
-  text-align: center;
-  line-height: 1.3;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .pep-cards-container {
-    gap: 24px;
-    margin-top: 48px;
-  }
-
-  .pep-card {
-    width: 320px;
-    min-height: 260px;
-    padding: 44px 36px;
-  }
-
-  .pep-card .pep-letter {
-    font-size: 56px;
-  }
-
-  .pep-card .pep-word {
-    font-size: 26px;
-  }
-}
-
-@media (max-width: 768px) {
-  .pep-cards-container {
-    gap: 16px;
-    padding: 0 20px;
-  }
-
-  .pep-card {
-    width: 100%;
-    max-width: 300px;
-    min-height: 240px;
-    padding: 40px 32px;
-  }
-
-  .pep-card .pep-letter {
-    font-size: 48px;
-  }
-
-  .pep-card .pep-word {
-    font-size: 24px;
-  }
-}
-
-@media (max-width: 480px) {
-  .pep-cards-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 0 16px;
-  }
-
-  .pep-card {
-    width: 100%;
-    max-width: 280px;
-    min-height: 220px;
-    padding: 36px 28px;
-  }
-
-  .pep-card .pep-letter {
-    font-size: 44px;
-  }
-
-  .pep-card .pep-word {
-    font-size: 22px;
-  }
-}
-
-/* Card PEP - Override per racchiudere i titoli nelle card */
-.pep-cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  margin-top: 80px;
-  padding: 0 40px;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 10;
-}
-
-.pep-card {
-  background: white;
-  padding: 60px 50px;
-  border-radius: 30px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-  width: 340px;
-  min-height: 320px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.pep-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 50px rgba(84, 180, 199, 0.4);
-}
-
-.pep-card .pep-letter {
-  font-size: 42px;
-  color: var(--teal);
-  font-weight: 900;
-  line-height: 1.2;
-  display: block;
-  text-align: center;
-  width: 100%;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .pep-card {
-    width: 320px;
-    min-height: 280px;
-    padding: 50px 40px;
-    border-radius: 26px;
-  }
-}
-
-@media (max-width: 768px) {
-  .pep-cards-container {
-    gap: 20px;
-    margin-top: 60px;
-  }
-
-  .pep-card {
-    width: 100%;
-    max-width: 300px;
-    min-height: 260px;
-    padding: 40px 30px;
-    border-radius: 24px;
-  }
-}
-
-@media (max-width: 480px) {
-  .pep-cards-container {
-    gap: 16px;
-    padding: 0 16px;
-    margin-top: 40px;
-  }
-
-  .pep-card {
-    max-width: 280px;
-    min-height: 220px;
-    padding: 36px 24px;
-    border-radius: 20px;
-  }
-}
-
-/* Card PEP - Override per centrare perfettamente i titoli */
-.pep-cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  margin-top: 80px;
-  padding: 0 40px;
-  flex-wrap: wrap;
-}
-
-.pep-card {
-  background: white;
-  padding: 60px 40px;
-  border-radius: 30px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-  width: 340px;
-  min-height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-
-.pep-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 50px rgba(84, 180, 199, 0.4);
-}
-
-.pep-card .pep-letter {
-  font-size: 42px;
-  color: var(--teal);
-  font-weight: 900;
-  line-height: 1.2;
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .pep-card {
-    width: 320px;
-    min-height: 280px;
-    padding: 50px 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .pep-cards-container {
-    gap: 20px;
-  }
-  
-  .pep-card {
-    max-width: 300px;
-    min-height: 260px;
-    padding: 40px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .pep-cards-container {
-    gap: 16px;
-    margin-top: 40px;
-  }
-  
-  .pep-card {
-    max-width: 280px;
-    min-height: 220px;
-    padding: 36px 16px;
-  }
-}
-
-/* Card PEP - Fix per il centraggio di testi lunghi */
-.pep-cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  margin-top: 80px;
-  padding: 0 40px;
-  flex-wrap: wrap;
-}
-
-.pep-card {
-  background: white;
-  padding: 60px 30px;
-  border-radius: 30px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-  width: 340px;
-  min-height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  position: relative;
-  text-align: center;
-}
-
-.pep-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 50px rgba(84, 180, 199, 0.4);
-}
-
-.pep-card .pep-letter {
-  display: block;
-  font-size: 42px;
-  color: var(--teal);
-  font-weight: 900;
-  width: 100%;
-  text-align: center;
-  margin: 0 auto;
-  letter-spacing: -0.5px; /* Riduce leggermente lo spazio tra le lettere */
-  white-space: nowrap; /* Impedisce il ritorno a capo del testo */
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .pep-card {
-    width: 320px;
-    min-height: 280px;
-    padding: 50px 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .pep-card {
-    max-width: 300px;
-    min-height: 260px;
-    padding: 40px 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .pep-card {
-    max-width: 280px;
-    min-height: 220px;
-    padding: 36px 12px;
-  }
-  
-  .pep-card .pep-letter {
-    font-size: 38px;
-  }
-}
-/* Card PEP - Fix specifico per centrare Professionalità */
-.pep-cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  margin-top: 80px;
-  padding: 0 40px;
-  flex-wrap: wrap;
-}
-
-.pep-card {
-  background: white;
-  padding: 60px 20px; /* Ridotto padding orizzontale per dare più spazio */
-  border-radius: 30px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-  width: 340px;
-  min-height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  position: relative;
-  text-align: center;
-}
-
-.pep-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 50px rgba(84, 180, 199, 0.4);
-}
-
-.pep-card .pep-letter {
-  display: block;
-  font-size: 42px;
-  color: var(--teal);
-  font-weight: 900;
-  width: 100%;
-  text-align: center;
-  margin: 0 auto;
-  letter-spacing: -1px; /* Aumentata riduzione spazio tra lettere */
-  white-space: nowrap; /* Impedisce il ritorno a capo del testo */
-  transform: translateX(-1px); /* Leggero offset per bilanciare il testo */
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .pep-card {
-    width: 320px;
-    min-height: 280px;
-    padding: 50px 16px; /* Ridotto padding orizzontale */
-  }
-}
-
-@media (max-width: 768px) {
-  .pep-card {
-    max-width: 300px;
-    min-height: 260px;
-    padding: 40px 14px; /* Ridotto padding orizzontale */
-  }
-  
-  .pep-card .pep-letter {
-    letter-spacing: -1.2px;
-  }
-}
-
-
-/* Filosofia e servizi */
-.philosophy-container {
-  max-width: 900px;
-  margin: 60px auto 0;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.philosophy-text {
-  font-size: clamp(18px, 2.2vw, 24px);
-  font-weight: 500;
-  line-height: 1.5;
-  color: var(--teal-dark);
-  margin-bottom: 40px;
-}
-
-.services-container {
-  margin-top: 30px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 16px;
-  padding: 24px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.services-title {
-  font-size: clamp(16px, 1.8vw, 20px);
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: var(--teal-dark);
-}
-
-.services-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  list-style-type: none;
-  padding: 0;
-}
-
-.services-list li {
-  font-size: clamp(15px, 1.5vw, 18px);
-  color: var(--ink);
-  position: relative;
-  padding-left: 10px;
-}
-
-.services-list li::before {
-  content: "•";
-  color: var(--teal);
-  font-weight: bold;
-  display: inline-block;
-  margin-right: 8px;
-}
-
-/* Regola lo spazio tra la filosofia e le card */
-.philosophy-container + .pep-cards-container {
-  margin-top: 50px;
-}
-
-@media (max-width: 768px) {
-  .philosophy-container {
-    margin-top: 40px;
-  }
-  
-  .philosophy-text {
-    font-size: 17px;
-  }
-  
-  .services-container {
-    padding: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .philosophy-container {
-    margin-top: 30px;
-    padding: 0 16px;
-  }
-  
-  .philosophy-text {
-    font-size: 16px;
-  }
-  
-  .services-container {
-    padding: 16px;
-  }
-  
-  .services-title {
-    font-size: 16px;
-  }
-  
-  .services-list li {
-    font-size: 15px;
-  }
-}
-
-/* Filosofia e servizi - STILI ACCATTIVANTI */
-.philosophy-container {
-  max-width: 900px;
-  margin: 80px auto 0;
-  text-align: center;
-  padding: 0 20px;
-  position: relative;
-}
-
-/* Decorazione stilistica */
-.philosophy-container::before {
-  content: '"';
-  position: absolute;
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 120px;
-  line-height: 0;
-  color: rgba(84, 180, 199, 0.15);
-  font-family: Georgia, serif;
-  z-index: 0;
-}
-
-.philosophy-text {
-  font-size: clamp(19px, 2.4vw, 26px);
-  font-weight: 600;
-  line-height: 1.6;
-  color: var(--teal-dark);
-  margin-bottom: 50px;
-  position: relative;
-  padding: 0 10px;
-  animation: fadeIn 1s ease-out;
-}
-
-/* Evidenziazione parole chiave */
-.philosophy-text strong {
-  color: var(--teal);
-  font-weight: 900;
-  position: relative;
-  white-space: nowrap;
-}
-
-.philosophy-text strong::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 2px;
-  width: 100%;
-  height: 6px;
-  background-color: rgba(84, 180, 199, 0.2);
-  z-index: -1;
-  border-radius: 4px;
-}
-
-.services-container {
-  margin-top: 40px;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
-  border-radius: 24px;
-  padding: 32px;
-  max-width: 800px;
-  margin: 0 auto;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(5px);
-  animation: slideUp 0.8s ease-out;
-}
-
-.services-title {
-  font-size: clamp(18px, 2vw, 22px);
-  font-weight: 800;
-  margin-bottom: 30px;
-  color: var(--teal-dark);
-  position: relative;
-  display: inline-block;
-}
-
-/* Decorazione sottotitolo */
-.services-title::after {
-  content: '';
-  position: absolute;
-  left: 25%;
-  bottom: -10px;
-  width: 50%;
-  height: 4px;
-  background: linear-gradient(90deg, transparent, var(--teal), transparent);
-  border-radius: 2px;
-}
-
-.services-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  list-style-type: none;
-  padding: 0;
-}
-
-.services-list li {
-  font-size: clamp(16px, 1.6vw, 19px);
-  color: var(--ink);
-  position: relative;
-  padding: 8px 14px;
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 12px;
-  width: fit-content;
-  min-width: 200px;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(84, 180, 199, 0.1);
-}
-
-.services-list li:hover {
-  transform: translateY(-3px);
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 6px 15px rgba(84, 180, 199, 0.15);
-}
-
-.services-list li::before {
-  content: "•";
-  color: var(--teal);
-  font-weight: bold;
-  display: inline-block;
-  margin-right: 10px;
-  font-size: 1.2em;
-}
-
-/* Regola lo spazio tra la filosofia e le card */
-.philosophy-container + .pep-cards-container {
-  margin-top: 70px;
-}
-
-/* Animazioni */
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@media (max-width: 768px) {
-  .philosophy-container {
-    margin-top: 50px;
-  }
-  
-  .philosophy-text {
-    font-size: 18px;
-    padding: 0;
-  }
-  
-  .services-container {
-    padding: 24px 20px;
-  }
-  
-  .services-list li {
-    padding: 6px 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .philosophy-container {
-    margin-top: 40px;
-    padding: 0 12px;
-  }
-  
-  .philosophy-container::before {
-    font-size: 80px;
-    top: -30px;
-  }
-  
-  .philosophy-text {
-    font-size: 17px;
-  }
-  
-  .services-container {
-    padding: 20px 16px;
-    border-radius: 18px;
-  }
-  
-  .services-title {
-    font-size: 17px;
-    margin-bottom: 25px;
-  }
-  
-  .services-list li {
-    font-size: 16px;
-    padding: 5px 10px;
-    min-width: 180px;
-  }
-}
-
-/* Titolo principale - più grande e imponente */
+/* Titolo */
 .hero-title {
   font-size: clamp(50px, 7vw, 80px);
   font-weight: 900;
@@ -1178,17 +119,18 @@
   border-radius: 4px;
 }
 
-/* Contenitore servizi elegante */
-.services-container {
+/* Slider dei servizi */
+.services-slider-container {
   margin-top: 50px;
   background: linear-gradient(120deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
   border-radius: 30px;
-  padding: 40px;
+  padding: 40px 20px;
   max-width: 850px;
   margin: 0 auto;
   box-shadow: 0 15px 40px rgba(26, 125, 140, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
+  overflow: hidden;
 }
 
 .services-title {
@@ -1211,44 +153,63 @@
   border-radius: 3px;
 }
 
-/* Lista servizi stilosa */
-.services-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  list-style-type: none;
-  padding: 0;
+.services-slider {
+  position: relative;
+  width: 100%;
+  margin: 30px auto 0;
+  overflow: hidden;
+  padding: 10px 0;
 }
 
-.services-list li {
+.services-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  width: fit-content;
+}
+
+.services-slider.paused .services-track {
+  animation-play-state: paused;
+}
+
+.service-item {
+  flex-shrink: 0;
+  padding: 0 20px;
+}
+
+.service-content {
   font-size: clamp(18px, 2vw, 22px);
   color: var(--ink);
   font-weight: 500;
-  position: relative;
   padding: 12px 18px;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 15px;
-  width: fit-content;
-  min-width: 250px;
+  white-space: nowrap;
   transition: all 0.3s ease;
   border: 1px solid rgba(84, 180, 199, 0.15);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-.services-list li:hover {
-  transform: translateY(-4px) scale(1.03);
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 8px 20px rgba(84, 180, 199, 0.2);
-}
-
-.services-list li::before {
-  content: "•";
+.service-dot {
   color: var(--teal);
   font-weight: bold;
   display: inline-block;
   margin-right: 12px;
   font-size: 1.3em;
+}
+
+.services-slider:hover .service-content {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 20px rgba(84, 180, 199, 0.2);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 2));
+  }
 }
 
 /* Card PEP - più grandi e stilose */
@@ -1263,11 +224,11 @@
 
 .pep-card {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8));
-  padding: 70px 30px;
+  padding: 60px 15px;
   border-radius: 35px;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12), 0 10px 20px rgba(84, 180, 199, 0.1);
-  width: 360px;
-  min-height: 340px;
+  width: 340px;
+  min-height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1285,33 +246,59 @@
 
 .pep-card .pep-letter {
   display: block;
-  font-size: 48px;
-  background: linear-gradient(135deg, #1a7d8c, #54b4c7);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  font-size: 42px;
+  color: var(--teal);
   font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1.2px;
+  white-space: nowrap;
   width: 100%;
   text-align: center;
-  margin: 0 auto;
-  letter-spacing: -1px;
-  white-space: nowrap;
+  margin: 0;
+  padding: 0;
 }
 
-/* Responsive adattamenti */
+/* Fix specifico per "Professionalità" */
+.pep-card:first-child .pep-letter {
+  font-size: 40px;
+  letter-spacing: -1.8px;
+  transform: scale(0.95);
+}
+
+/* Animazioni */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
 @media (max-width: 1024px) {
   .pep-cards-container {
     gap: 25px;
   }
   
   .pep-card {
-    width: 330px;
+    width: 320px;
     min-height: 300px;
-    padding: 60px 25px;
+    padding: 50px 16px;
+  }
+  
+  .philosophy-container {
+    margin-top: 80px;
   }
 }
 
 @media (max-width: 768px) {
+  .welcome {
+    padding: 60px 15px;
+  }
+
   .hero-title {
     font-size: clamp(40px, 8vw, 50px);
   }
@@ -1333,27 +320,31 @@
     padding: 0;
   }
   
-  .services-container {
-    padding: 30px 20px;
+  .services-slider-container {
+    padding: 30px 15px;
   }
   
-  .services-list li {
-    padding: 10px 15px;
+  .service-content {
     font-size: 18px;
+    padding: 10px 15px;
   }
   
   .pep-card {
     max-width: 300px;
-    min-height: 280px;
-    padding: 50px 20px;
+    min-height: 260px;
+    padding: 40px 20px;
   }
   
   .pep-card .pep-letter {
-    font-size: 42px;
+    font-size: 38px;
   }
 }
 
 @media (max-width: 480px) {
+  .welcome {
+    padding: 50px 12px;
+  }
+  
   .hero-title {
     font-size: 38px;
     margin-bottom: 30px;
@@ -1385,18 +376,23 @@
     font-size: 18px;
   }
   
-  .services-container {
-    padding: 25px 18px;
-    border-radius: 25px;
+  .services-slider-container {
+    padding: 25px 10px;
+    border-radius: 20px;
   }
   
   .services-title {
     font-size: 20px;
+    margin-bottom: 25px;
   }
   
-  .services-list li {
-    font-size: 17px;
+  .service-content {
+    font-size: 16px;
     padding: 8px 12px;
+  }
+  
+  .service-item {
+    padding: 0 10px;
   }
   
   .pep-cards-container {
@@ -1406,55 +402,351 @@
   
   .pep-card {
     max-width: 280px;
-    min-height: 240px;
-    padding: 40px 16px;
+    min-height: 220px;
+    padding: 36px 16px;
   }
   
   .pep-card .pep-letter {
-    font-size: 38px;
-  }
-}
-
-/* Fix centering for card titles */
-.pep-card {
-  padding: 60px 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: visible;
-}
-
-.pep-card .pep-letter {
-  font-size: 42px;
-  color: var(--teal);
-  font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: -1.2px;
-  white-space: nowrap;
-  width: 100%;
-  display: block;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-/* Specific fix for "Professionalità" */
-.pep-card:first-child .pep-letter {
-  font-size: 40px;
-  letter-spacing: -1.8px;
-  transform: scale(0.95);
-}
-
-@media (max-width: 480px) {
-  .pep-card {
-    padding: 40px 10px;
-  }
-  
-  .pep-card .pep-letter {
-    font-size: 38px;
+    font-size: 36px;
   }
   
   .pep-card:first-child .pep-letter {
-    font-size: 36px;
+    font-size: 34px;
   }
 }
+
+@media (max-width: 380px) {
+  .pep-card {
+    padding: 30px 10px;
+  }
+  
+  .service-content {
+    font-size: 15px;
+    padding: 6px 10px;
+  }
+}
+
+/* OVERRIDE PER CREARE UNO SLIDER ORIZZONTALE FUNZIONANTE!!! */
+
+.services-container,
+.services-slider-container {
+  position: relative !important;
+  background: #ffffff !important;
+  border-radius: 30px !important;
+  padding: 35px 20px !important;
+  margin: 40px auto 0 !important;
+  max-width: 850px !important;
+  box-shadow: 0 15px 40px rgba(26, 125, 140, 0.15) !important;
+  overflow: hidden !important;
+}
+
+.services-title {
+  text-align: center !important;
+  font-weight: 700 !important;
+  margin-bottom: 30px !important;
+  position: relative !important;
+}
+
+.services-title::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -10px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 200px !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, transparent, var(--teal), transparent) !important;
+}
+
+/* SLIDER LAYOUT */
+.services-slider, 
+.services-list-wrapper {
+  display: flex !important;
+  width: 100% !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x mandatory !important;
+  gap: 15px !important;
+  padding: 10px 5px !important;
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;  /* Firefox */
+}
+
+.services-slider::-webkit-scrollbar, 
+.services-list-wrapper::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+}
+
+/* Contenitore che scorre automaticamente */
+.services-track {
+  display: flex !important;
+  gap: 15px !important;
+  animation: scroll 30s linear infinite !important;
+  padding: 5px !important;
+}
+
+/* Auto-scorrimento */
+@keyframes scroll {
+  0% {
+    transform: translateX(0) !important;
+  }
+  100% {
+    transform: translateX(calc(-100% + 100vw)) !important;
+  }
+}
+
+/* Stile elemento singolo */
+.service-item {
+  flex: 0 0 auto !important;
+  scroll-snap-align: start !important;
+  min-width: fit-content !important;
+  background: white !important;
+  padding: 0 !important;
+}
+
+.service-content,
+.service-text {
+  display: flex !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+  background: white !important;
+  border-radius: 15px !important;
+  padding: 12px 20px !important;
+  margin: 0 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05) !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  transition: transform 0.3s ease !important;
+}
+
+/* Pallino colorato */
+.service-dot {
+  color: var(--teal) !important;
+  font-size: 20px !important;
+  margin-right: 10px !important;
+  font-weight: bold !important;
+}
+
+/* Effetto hover e pausa */
+.services-track:hover {
+  animation-play-state: paused !important;
+}
+
+.service-content:hover,
+.service-text:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 15px rgba(84, 180, 199, 0.2) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-container,
+  .services-slider-container {
+    padding: 25px 15px 30px !important;
+  }
+  
+  .service-content,
+  .service-text {
+    padding: 10px 16px !important;
+    font-size: 15px !important;
+  }
+  
+  .service-dot {
+    font-size: 18px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-container,
+  .services-slider-container {
+    padding: 20px 10px 25px !important;
+  }
+  
+  .services-title {
+    font-size: 18px !important;
+  }
+  
+  .service-content,
+  .service-text {
+    padding: 8px 14px !important;
+    font-size: 14px !important;
+  }
+  
+  .service-dot {
+    font-size: 16px !important;
+    margin-right: 8px !important;
+  }
+}
+
+/* OVERRIDE PER CREARE UNO SLIDER ORIZZONTALE SENZA PALLINI */
+
+.services-container,
+.services-slider-container {
+  position: relative !important;
+  background: #ffffff !important;
+  border-radius: 30px !important;
+  padding: 35px 20px !important;
+  margin: 40px auto 0 !important;
+  max-width: 850px !important;
+  box-shadow: 0 15px 40px rgba(26, 125, 140, 0.15) !important;
+  overflow: hidden !important;
+}
+
+.services-title {
+  text-align: center !important;
+  font-weight: 700 !important;
+  margin-bottom: 30px !important;
+  position: relative !important;
+}
+
+.services-title::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -10px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 200px !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, transparent, var(--teal), transparent) !important;
+}
+
+/* LAYOUT SLIDER ORIZZONTALE */
+.services-slider, 
+.services-list-wrapper {
+  display: flex !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  padding: 10px 0 !important;
+}
+
+/* Contenitore che scorre automaticamente */
+.services-track {
+  display: flex !important;
+  gap: 20px !important;
+  animation: scroll 25s linear infinite !important;
+  padding: 5px 0 !important;
+}
+
+/* Pausa al passaggio del mouse */
+.services-track:hover,
+.services-list-wrapper:hover {
+  animation-play-state: paused !important;
+}
+
+/* Auto-scorrimento */
+@keyframes scroll {
+  0% {
+    transform: translateX(0) !important;
+  }
+  100% {
+    transform: translateX(calc(-200%)) !important;
+  }
+}
+
+/* Stile elemento singolo - SENZA PALLINI */
+.service-item {
+  flex: 0 0 auto !important;
+  min-width: fit-content !important;
+  background: white !important;
+  padding: 0 !important;
+}
+
+.service-content,
+.service-text {
+  display: flex !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+  background: white !important;
+  border-radius: 15px !important;
+  padding: 12px 20px !important;
+  margin: 0 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05) !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  transition: transform 0.3s ease !important;
+}
+
+/* RIMUOVIAMO I PALLINI */
+.service-dot {
+  display: none !important;
+}
+
+/* Effetto hover */
+.service-content:hover,
+.service-text:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 15px rgba(84, 180, 199, 0.2) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-container,
+  .services-slider-container {
+    padding: 25px 15px 30px !important;
+  }
+  
+  .service-content,
+  .service-text {
+    padding: 10px 16px !important;
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-container,
+  .services-slider-container {
+    padding: 20px 10px 25px !important;
+  }
+  
+  .services-title {
+    font-size: 18px !important;
+  }
+  
+  .service-content,
+  .service-text {
+    padding: 8px 14px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* Fix per assicurarsi che lo slider abbia abbastanza elementi */
+@media (min-width: 992px) {
+  .services-track::after {
+    content: "";
+    padding-right: 20px;
+  }
+}
+.philosophy-container {
+  max-width: 950px !important;
+  margin: 100px auto 0 !important;
+  text-align: center !important;
+  padding: 0 20px !important;
+  position: relative !important;
+}
+
+@media (max-width: 900px) {
+  .philosophy-container {
+    margin-top: 80px !important;
+    padding: 0 16px !important;
+    max-width: 760px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .philosophy-container {
+    margin-top: 60px !important;
+    padding: 0 14px !important;
+    max-width: 540px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .philosophy-container {
+    margin-top: 48px !important;
+    padding: 0 12px !important;
+    max-width: 100% !important;
+  }
+}
+
+
+
+

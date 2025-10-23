@@ -1,13 +1,24 @@
 import React from 'react';
 import './WelcomeSection.css';
+import './SliderOverride.css'; // <-- importa l'override DOPO il css principale
 
 function WelcomeSection() {
+  const services = [
+    "odontoiatria generica",
+    "odontoiatria estetica",
+    "odontoiatria conservativa ed endodonzia",
+    "Chirurgia Orale e Chirurgia Implantare",
+    "Parodontologia, Igiene e Profilassi",
+    "Protesi Dentaria",
+    "Ortodonzia"
+  ];
+
   return (
     <section className="welcome">
       <div className="welcome-content centered">
         <div className="welcome-text">
           <h2 className="hero-title">Il sorriso che meriti</h2>
-          
+
           <div className="slogan-container">
             <p className="slogan-text">La tua salute dentale</p>
             <p className="slogan-highlight">nelle mani giuste</p>
@@ -22,29 +33,30 @@ function WelcomeSection() {
           parere regole Auree per poter offrire ai miei Pazienti un Trattamento adeguato 
           in massima sicurezza
         </p>
-        
-        <div className="services-container">
+
+        {/* SLIDER servizi */}
+        <div className="services-slider-container">
           <p className="services-title">Lo Studio copre tutte le branche dell'Odontoiatria quali:</p>
-          <ul className="services-list">
-            <li>odontoiatria generica</li>
-            <li>odontoiatria estetica</li>
-            <li>odontoiatria conservativa ed endodonzia</li>
-            <li>Chirurgia Orale e Chirurgia Implantare</li>
-            <li>Parodontologia, Igiene e Profilassi</li>
-            <li>Protesi Dentaria</li>
-            <li>Ortodonzia</li>
-          </ul>
+
+          <div className="services-slider">
+            <div className="services-track">
+              {[...services, ...services].map((service, i) => (
+                <div className="service-item" key={`svc-${i}`}>
+                  <div className="service-content">{service}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
+
       <div className="pep-cards-container">
         <div className="pep-card">
           <span className="pep-letter">Professionalità</span>
         </div>
-        
         <div className="pep-card">
           <span className="pep-letter">Empatia</span>
         </div>
-        
         <div className="pep-card">
           <span className="pep-letter">Preparazione</span>
         </div>

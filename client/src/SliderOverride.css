@@ -1,0 +1,149 @@
+/* OVERRIDE COMPLETO PER SLIDER CHE SCORRE */
+
+/* Container slider */
+.services-slider-container {
+  margin-top: 50px !important;
+  background: #ffffff !important;
+  border-radius: 30px !important;
+  padding: 35px 20px !important;
+  max-width: 850px !important;
+  margin: 40px auto 0 !important;
+  box-shadow: 0 15px 40px rgba(26, 125, 140, 0.15) !important;
+  overflow: hidden !important;
+}
+
+/* Titolo */
+.services-title {
+  font-size: clamp(22px, 2.5vw, 28px) !important;
+  font-weight: 800 !important;
+  margin-bottom: 35px !important;
+  color: var(--teal-dark) !important;
+  text-align: center !important;
+  position: relative !important;
+  display: block !important;
+}
+
+.services-title::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -12px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 200px !important;
+  height: 4px !important;
+  background: linear-gradient(90deg, transparent, var(--teal), transparent) !important;
+  border-radius: 2px !important;
+}
+
+/* SLIDER WRAPPER - PRINCIPALE */
+.services-slider {
+  position: relative !important;
+  width: 100% !important;
+  margin: 30px auto 0 !important;
+  overflow: hidden !important;
+  padding: 10px 0 !important;
+  height: 70px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* TRACK CHE SCORRE - ANIMAZIONE */
+.services-track {
+  display: flex !important;
+  gap: 20px !important;
+  animation: slideScroll 30s linear infinite !important;
+  width: max-content !important;
+  padding: 0 !important;
+}
+
+/* FERMA AL HOVER */
+.services-slider:hover .services-track {
+  animation-play-state: paused !important;
+}
+
+/* ANIMAZIONE SCORRIMENTO */
+@keyframes slideScroll {
+  0% {
+    transform: translateX(0) !important;
+  }
+  100% {
+    transform: translateX(calc(-50% - 10px)) !important;
+  }
+}
+
+/* ELEMENTO SERVIZIO */
+.service-item {
+  flex: 0 0 auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: none !important;
+}
+
+/* CONTENUTO SERVIZIO */
+.service-content {
+  background-color: white !important;
+  padding: 12px 20px !important;
+  border-radius: 15px !important;
+  white-space: nowrap !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05) !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: var(--ink) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  border: 1px solid rgba(84, 180, 199, 0.1) !important;
+}
+
+.service-content:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 15px rgba(84, 180, 199, 0.2) !important;
+}
+
+/* NASCONDI PALLINI */
+.service-dot {
+  display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-slider-container {
+    padding: 30px 15px !important;
+  }
+  
+  .service-content {
+    font-size: 15px !important;
+    padding: 10px 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-slider-container {
+    padding: 25px 10px !important;
+    border-radius: 20px !important;
+  }
+  
+  .services-title {
+    font-size: 18px !important;
+    margin-bottom: 25px !important;
+  }
+  
+  .service-content {
+    font-size: 14px !important;
+    padding: 8px 14px !important;
+  }
+  
+  .services-slider {
+    height: 60px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .service-content {
+    font-size: 13px !important;
+    padding: 6px 10px !important;
+  }
+}
+
+
+

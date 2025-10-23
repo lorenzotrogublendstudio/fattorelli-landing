@@ -1,2 +1,11 @@
 .App{display:flex;flex-direction:column;min-height:100dvh}
 main{flex:1 0 auto}
+
+body{
+  margin:0;
+  font-family:'Roboto',sans-serif;
+  font-weight:400;
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  background:linear-gradient(180deg,#c1e2e6 0%,#ffffff 100%);
+}

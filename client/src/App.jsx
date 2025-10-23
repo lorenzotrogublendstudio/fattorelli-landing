@@ -9,7 +9,7 @@ import Reviews from './Reviews';              // 👈
 import Footer from './Footer';
 import BookingModal from './BookingModal';    // 👈
 import SkillsSection from "./SkillsSection";
-
+import './SliderOverride.css';
 function App() {
   const [showModal, setShowModal] = useState(false);
 

@@ -105,3 +105,122 @@
     width: 100%;
   }
 }
+
+.footer{
+  /* ...existing code... */
+  margin-top: 0 !important;
+}
+
+.footer-call{
+  display:flex;
+}
+
+.call-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 28px;
+  border-radius:999px;
+  background:#fff;
+  color:var(--teal-dark);
+  font-weight:700;
+  text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.call-btn:hover{
+  transform:translateY(-3px);
+  background:var(--mint);
+  color:var(--teal-dark);
+  box-shadow:0 10px 24px rgba(0,0,0,.15);
+}
+.footer-call{
+  display:flex;
+}
+
+.call-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 28px;
+  border-radius:999px;
+  background:#fff;
+  color:var(--teal-dark);
+  font-weight:700;
+  text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.call-btn:hover{
+  transform:translateY(-3px);
+  background:var(--mint);
+  color:var(--teal-dark);
+  box-shadow:0 10px 24px rgba(0,0,0,.15);
+}
+
+.footer-right{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.footer-call{
+  display:flex;
+  justify-content:center;
+  width:100%;
+  margin-top:20px;
+}
+
+.call-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 32px;
+  border-radius:999px;
+  background:#fff;
+  color:var(--teal-dark);
+  font-weight:700;
+  text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.call-btn:hover{
+  transform:translateY(-3px);
+  background:var(--mint);
+  color:var(--teal-dark);
+  box-shadow:0 10px 24px rgba(0,0,0,.15);
+}
+.footer-right{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.footer-call{
+  display:flex;
+  justify-content:center;
+  width:100%;
+  margin-top:20px;
+}
+
+.call-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 32px;
+  border-radius:999px;
+  background:#fff;
+  color:var(--teal-dark);
+  font-weight:700;
+  text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.call-btn:hover{
+  transform:translateY(-3px);
+  background:var(--mint);
+  color:var(--teal-dark);
+  box-shadow:0 10px 24px rgba(0,0,0,.15);
+}

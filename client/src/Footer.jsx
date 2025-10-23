@@ -23,10 +23,8 @@ export default function Footer() {
             <li>Domenica: Chiuso</li>
           </ul>
 
-          <div className="footer-social">
-            <a href="#" aria-label="Facebook" className="social fb"></a>
-            <a href="#" aria-label="Instagram" className="social ig"></a>
-            <a href="#" aria-label="Whatsapp" className="social wa"></a>
+          <div className="footer-call">
+            <a href="tel:05231657502" className="call-btn">Chiama ora</a>
           </div>
         </div>
       </div>

@@ -1,27 +1,35 @@
 import React from "react";
 import "./Reviews.css";
+import "./SliderOverride.css"; // se già usato altrove puoi rimuovere questa importazione
 
-const DATA = [
+const GOOGLE_REVIEWS = [
   {
-    name: "Giulia",
+    name: "Michela Gobbi",
     rating: 5,
-    text:
-      "Studio accogliente e servizio impeccabile! Mi hanno seguita con pazienza e chiarezza in ogni fase.",
-    time: "2 settimane fa",
-  },
-  {
-    name: "Marco",
-    rating: 5,
-    text:
-      "Professionalità altissima e zero ansia: spiegazioni precise e mano delicatissima. Consigliatissimo.",
     time: "1 mese fa",
+    text:
+      "Studio molto accogliente. Il dottore è una persona davvero professionale, molto gentile e ti mette subito a tuo agio. Consigliatissimo!",
   },
   {
-    name: "Sara",
+    name: "Cinzia Bogliaccino",
     rating: 5,
+    time: "6 mesi fa",
     text:
-      "Mi sono sentita subito a mio agio. Ambiente pulito e moderno, personale super gentile.",
-    time: "3 mesi fa",
+      "Consiglio vivamente lo studio Fattorelli. Il dottore è molto attento al paziente, scrupoloso e preciso. Ambiente pulito con strumenti all’avanguardia.",
+  },
+  {
+    name: "Sara Piga",
+    rating: 5,
+    time: "7 mesi fa",
+    text:
+      "Studio dentistico eccellente. Il dottore è gentile e rassicurante, visita molto accurata e molta attenzione per il comfort del paziente.",
+  },
+  {
+    name: "Alessandra Filippi",
+    rating: 5,
+    time: "7 mesi fa",
+    text:
+      "Professionalità, gentilezza e grande disponibilità. Mi sono sentita subito in ottime mani e il risultato è stato perfetto. Grazie di cuore!",
   },
 ];
 
@@ -44,52 +52,56 @@ function Stars({ value = 5 }) {
 }
 
 export default function Reviews({ onOpenModal }) {
-  const reviews = [
-    {
-      name: "Giulia P.",
-      text: "Il Dott. Fattorelli è sempre gentile e attento, mi ha messo a mio agio fin dal primo incontro. Studio pulito e accogliente!",
-    },
-    {
-      name: "Marco R.",
-      text: "Professionalità e precisione impeccabili. Finalmente uno studio dove senti che la cura del paziente viene prima di tutto.",
-    },
-    {
-      name: "Elisa D.",
-      text: "Ho risolto un problema che altri dentisti non riuscivano a trattare. Assolutamente consigliato!",
-    },
-  ];
-
   return (
     <section className="reviews section" id="recensioni">
       <div className="container">
-        <h2 className="h2 reveal">Cosa dicono i nostri pazienti</h2>
-        <p className="lead reveal">
-          Le opinioni di chi si è affidato al nostro studio.
-        </p>
-
-        <div className="reviews-grid">
-          {reviews.map((r, i) => (
-            <div
-              key={i}
-              className="review-card reveal"
-              style={{ animationDelay: `${i * 150}ms` }}
-            >
-              <p className="review-text">“{r.text}”</p>
-              <p className="review-name">— {r.name}</p>
+        <div className="reviews-card">
+          <div className="reviews-header">
+            <div>
+              <h2 className="reviews-title">Cosa dicono i nostri pazienti</h2>
+              <p className="reviews-lead">
+                Alcune recensioni reali raccolte su <strong>Google</strong>.
+              </p>
             </div>
-          ))}
-        </div>
+            <div className="google-badge" aria-label="Valutazione Google">
+              <div className="badge-logo" aria-hidden="true">
+                <span className="g">G</span>
+              </div>
+              <div>
+                <div className="badge-score">
+                  5.0 <Stars value={5} />
+                </div>
+                <span className="badge-caption">Recensioni verificate</span>
+              </div>
+            </div>
+          </div>
 
-        <div className="reviews-cta">
-          <button
-            type="button"
-            className="btn"
-            onClick={onOpenModal}   // 👈 apre la modale
-          >
-            Prenota una visita
-          </button>
+          <div className="reviews-slider">
+            <div className="reviews-track">
+              {[...GOOGLE_REVIEWS, ...GOOGLE_REVIEWS].map((review, idx) => (
+                <article className="review-card" key={`rv-${idx}`}>
+                  <header className="review-head">
+                    <div className="rv-id">
+                      <p className="rv-name">{review.name}</p>
+                      <span className="rv-time">{review.time}</span>
+                    </div>
+                    <Stars value={review.rating} />
+                  </header>
+                  <p className="review-text">“{review.text}”</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="reviews-cta">
+            {onOpenModal && (
+              <button type="button" className="btn" onClick={onOpenModal}>
+                Prenota una visita
+              </button>
+            )}
+          </div>
         </div>
       </div>
-    </section>
-  );
+    </section>  
+    );
 }

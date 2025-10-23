@@ -182,3 +182,139 @@
     font-size: 18px;
   }
 }
+
+/* Miglioramenti responsive per la sezione Skills */
+
+@media (max-width: 968px) {
+  .skills-section {
+    padding: 60px 0;
+  }
+  
+  .skills-row {
+    flex-direction: column;
+  }
+  
+  .image-column {
+    margin-top: 40px;
+    width: 100%;
+  }
+  
+  .studio-image-container {
+    min-height: 300px;
+    max-height: 400px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 580px) {
+  .skills-section {
+    padding: 50px 0;
+  }
+  
+  .section-title {
+    margin-bottom: 40px;
+    font-size: 28px;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .skill-card {
+    padding: 20px 15px;
+  }
+  
+  .image-column {
+    margin-top: 30px;
+  }
+  
+  .studio-image-container {
+    min-height: 220px;
+    border-radius: 16px;
+  }
+  
+  .studio-image {
+    height: 100%;
+    object-position: center 20%; /* Mostra meglio la parte centrale-superiore dell'immagine */
+  }
+  
+  .image-overlay {
+    padding: 15px;
+  }
+  
+  .image-overlay p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .studio-image-container {
+    min-height: 180px;
+  }
+  
+  .image-overlay {
+    padding: 12px 10px;
+  }
+  
+  .image-overlay p {
+    font-size: 14px;
+  }
+}
+
+/* =========================
+   FIX DEFINITIVO: SLIDER CHE SCORRE
+   - usiamo una nuova animazione 'marqueeX' per evitare conflitti
+   - pausa al passaggio del mouse
+   - rimuoviamo i pallini
+   ========================= */
+
+.services-slider {
+  overflow: hidden !important;
+  height: 70px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* track che scorre orizzontalmente in loop */
+.services-track {
+  display: flex !important;
+  gap: 20px !important;
+  width: max-content !important;
+  will-change: transform !important;
+  animation: marqueeX 32s linear infinite !important;
+}
+
+/* pausa al hover */
+.services-slider:hover .services-track {
+  animation-play-state: paused !important;
+}
+
+/* elementi compatti (niente padding extra) */
+.service-item {
+  padding: 0 !important;
+  margin: 0 !important;
+  flex: 0 0 auto !important;
+}
+
+/* rimuovi i pallini sopra i servizi */
+.service-dot {
+  display: none !important;
+}
+
+/* animazione indipendente da altre definizioni */
+@keyframes marqueeX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* con la lista duplicata 2 volte, -50% garantisce loop perfetto */
+    transform: translateX(-50%);
+  }
+}
+
+/* responsive */
+@media (max-width: 480px) {
+  .services-slider { height: 60px !important; }
+  .service-content { font-size: 14px !important; padding: 8px 14px !important; }
+}

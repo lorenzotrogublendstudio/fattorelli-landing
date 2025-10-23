@@ -26,7 +26,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: var(--ink);
-  background: var(--mint);
+  background: #c1e2e6;
   -webkit-font-smoothing: antialiased;
 }
 

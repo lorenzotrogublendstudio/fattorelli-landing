@@ -111,3 +111,15 @@
   .header-address:hover span:first-child,
   .header-address:hover span:last-child{ color: inherit; }
 }
+
+/* Override: logo header ancora più piccolo */
+.site-header .brand-logo{
+  height: clamp(30px, 4.8vw, 55px) !important;
+  width: auto !important;
+}
+
+@media (max-width: 520px){
+  .site-header .brand-logo{
+    height: clamp(26px, 8.5vw, 40px) !important;
+  }
+}
