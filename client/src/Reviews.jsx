@@ -93,13 +93,7 @@ export default function Reviews({ onOpenModal }) {
             </div>
           </div>
 
-          <div className="reviews-cta">
-            {onOpenModal && (
-              <button type="button" className="btn" onClick={onOpenModal}>
-                Prenota una visita
-              </button>
-            )}
-          </div>
+         
         </div>
       </div>
     </section>  
