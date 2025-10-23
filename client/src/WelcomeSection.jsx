@@ -2,6 +2,9 @@ import React from 'react';
 import './WelcomeSection.css';
 
 function WelcomeSection() {
+  // costruisce l'URL corretto sia in locale che su GitHub Pages
+  const photoUrl = `${import.meta.env.BASE_URL}media/fattorelli.jpg`;
+
   return (
     <section className="welcome">
       <div className="welcome-content">
@@ -21,7 +24,7 @@ function WelcomeSection() {
 
         <div className="welcome-photo">
           <img
-            src="/media/fattorelli.jpg"
+            src={photoUrl}
             alt="Dr. Umberto Fattorelli"
             className="foto-fattorelli"
           />
