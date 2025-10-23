@@ -4,6 +4,7 @@ import "./BookingModal.css";
 const PHONE = "05231657502";
 
 export default function BookingModal({ open, onClose }) {
+  
   const dialogRef = useRef(null);
   const [isMobile, setIsMobile] = useState(
     typeof window !== "undefined" ? window.matchMedia("(max-width: 768px)").matches : false
@@ -43,11 +44,14 @@ export default function BookingModal({ open, onClose }) {
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   async function onSubmit(e) {
+     const CONTACT_URL = import.meta.env.DEV
+  ? '/api/contact'                                  // DEV: proxy Vite → Node (o cambia a '/contact.php' se proxate il PHP)
+  : `${import.meta.env.BASE_URL}contact.php`; 
     e.preventDefault();
     try {
       setSending(true);
       setMsg(null);
-      const res = await fetch("http://localhost:3000/contact.php", {
+      const res = await fetch(CONTACT_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

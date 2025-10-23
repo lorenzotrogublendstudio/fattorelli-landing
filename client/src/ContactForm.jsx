@@ -8,7 +8,9 @@ const ContactForm = () => {
   const [error, setError] = useState('');
 
   // In dev puoi impostare VITE_CONTACT_URL, altrimenti usa contact.php accanto all’index.html
-  const CONTACT_URL = '/api/contact'; // usa il proxy, niente CORS
+  const CONTACT_URL = import.meta.env.DEV
+  ? '/api/contact'                                  // DEV: proxy Vite → Node (o cambia a '/contact.php' se proxate il PHP)
+  : `${import.meta.env.BASE_URL}contact.php`;       // PROD: PHP su SiteGround // usa il proxy, niente CORS
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
