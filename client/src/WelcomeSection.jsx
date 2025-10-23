@@ -21,7 +21,7 @@ function WelcomeSection() {
 
         <div className="welcome-photo">
           <img
-            src="/media/FOTO+SITO.jpg"
+            src="/media/fattorelli.jpg"
             alt="Dr. Umberto Fattorelli"
             className="foto-fattorelli"
           />
